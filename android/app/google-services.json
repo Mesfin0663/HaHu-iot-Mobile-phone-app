@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1038950350206",
+    "firebase_url": "https://fir-iot-aac7e-default-rtdb.firebaseio.com",
+    "project_id": "fir-iot-aac7e",
+    "storage_bucket": "fir-iot-aac7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038950350206:android:b8d4fac4c73fa5b63b072f",
+        "android_client_info": {
+          "package_name": "com.example.new_iot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038950350206-4hdgui6d7vgtp26j50mg1n42mlrvlj5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRaBUPfu80Bo04hdQl18qe64-GeYMH4GU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038950350206-4hdgui6d7vgtp26j50mg1n42mlrvlj5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

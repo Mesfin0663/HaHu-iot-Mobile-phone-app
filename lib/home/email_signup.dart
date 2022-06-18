@@ -19,7 +19,6 @@ class _EmailSignUpState extends State<EmailSignUp> {
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,25 +63,6 @@ class _EmailSignUpState extends State<EmailSignUp> {
                       return 'Enter an Email Address';
                     } else if (!value.contains('@')) {
                       return 'Pleas enter a valid email address';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: TextFormField(
-                  controller: ageController,
-                  decoration: InputDecoration(
-                    labelText: "Enter Age",
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  // The validator receives the text that the user has entered.
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Enter Age';
                     }
                     return null;
                   },
@@ -139,20 +119,111 @@ class _EmailSignUpState extends State<EmailSignUp> {
         .then((result) {
       dbRef.child(result.user.uid).set({
         "email": emailController.text,
-        "age": ageController.text,
         "name": nameController.text,
         "Devices": {
           "Device_1": {
-            "State": 0,
-            "Sensors": {
-              "Sensor_1": 25,
-              "Sensor_2": 25,
-              "Sensor_3": 25,
-              "Sensor_4": 25,
-              "Sensor_5": 25,
-              "Sensor_6": 25
+            "Live": {
+              "State": {
+                "Ts": DateTime.now().millisecondsSinceEpoch,
+                "Value": 0
+              },
+              "Sliders": {
+                "Slider_1": 0,
+                "Slider_2": 0,
+                "Slider_3": 0,
+                "Slider_4": 0,
+                "Slider_5": 0,
+                "Slider_6": 0,
+              },
+              "Sensors": {
+                "Range": {
+                  "Sensor_1": {
+                    "Min": 0,
+                    "Max": 100,
+                  },
+                  "Sensor_2": {
+                    "Min": 0,
+                    "Max": 100,
+                  },
+                  "Sensor_3": {
+                    "Min": 0,
+                    "Max": 100,
+                  },
+                  "Sensor_4": {
+                    "Min": 0,
+                    "Max": 100,
+                  },
+                  "Sensor_5": {
+                    "Min": 0,
+                    "Max": 100,
+                  },
+                  "Sensor_6": {
+                    "Min": 0,
+                    "Max": 100,
+                  }
+                },
+                "names": {
+                  "Sensor_1": "Sensor 1",
+                  "Sensor_2": "Sensor 2",
+                  "Sensor_3": "Sensor 3",
+                  "Sensor_4": "Sensor 4",
+                  "Sensor_5": "Sensor 5",
+                  "Sensor_6": "Sensor 6"
+                },
+                "Sensor_1": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_2": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_3": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_4": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_5": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_6": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                }
+              },
+              "Buttons": {
+                "names": {
+                  "Button_1": "Button 1",
+                  "Button_2": "Button 2",
+                  "Button_3": "Button 3",
+                  "Button_4": "Button 4",
+                  "Button_5": "Button 5",
+                  "Button_6": "Button 6"
+                },
+                "Button_1": false,
+                "Button_2": false,
+                "Button_3": false,
+                "Button_4": false,
+                "Button_5": false,
+                "Button_6": false,
+                "Button_7": false,
+                "Button_8": false,
+                "Button_9": false
+              }
             },
             "Storage": {
+              "names": {
+                "Sensor_1": "Sensor 1",
+                "Sensor_2": "Sensor 2",
+                "Sensor_3": "Sensor 3",
+                "Sensor_4": "Sensor 4",
+                "Sensor_5": "Sensor 5",
+                "Sensor_6": "Sensor 6"
+              },
               "Sensor_1": 0,
               "Sensor_2": 0,
               "Sensor_3": 0,
@@ -160,29 +231,76 @@ class _EmailSignUpState extends State<EmailSignUp> {
               "Sensor_5": 0,
               "Sensor_6": 0
             },
-            "Buttons": {
-              "Button_1": false,
-              "Button_2": false,
-              "Button_3": false,
-              "Button_4": false,
-              "Button_5": false,
-              "Button_6": false,
-              "Button_7": false,
-              "Button_8": false,
-              "Button_9": false
-            }
           },
           "Device_2": {
-            "State": 0,
-            "Sensors": {
-              "Sensor_1": 25,
-              "Sensor_2": 25,
-              "Sensor_3": 25,
-              "Sensor_4": 25,
-              "Sensor_5": 25,
-              "Sensor_6": 25
+            "Live": {
+              "State": {
+                "Ts": DateTime.now().millisecondsSinceEpoch,
+                "Value": 0
+              },
+              "Sensors": {
+                "names": {
+                  "Sensor_1": "Sensor 1",
+                  "Sensor_2": "Sensor 2",
+                  "Sensor_3": "Sensor 3",
+                  "Sensor_4": "Sensor 4",
+                  "Sensor_5": "Sensor 5",
+                  "Sensor_6": "Sensor 6"
+                },
+                "Sensor_1": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_2": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_3": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_4": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_5": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_6": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                }
+              },
+              "Buttons": {
+                "names": {
+                  "Button_1": "Button 1",
+                  "Button_2": "Button 2",
+                  "Button_3": "Button 3",
+                  "Button_4": "Button 4",
+                  "Button_5": "Button 5",
+                  "Button_6": "Button 6"
+                },
+                "Button_1": false,
+                "Button_2": false,
+                "Button_3": false,
+                "Button_4": false,
+                "Button_5": false,
+                "Button_6": false,
+                "Button_7": false,
+                "Button_8": false,
+                "Button_9": false
+              }
             },
             "Storage": {
+              "names": {
+                "Sensor_1": "Sensor 1",
+                "Sensor_2": "Sensor 2",
+                "Sensor_3": "Sensor 3",
+                "Sensor_4": "Sensor 4",
+                "Sensor_5": "Sensor 5",
+                "Sensor_6": "Sensor 6"
+              },
               "Sensor_1": 0,
               "Sensor_2": 0,
               "Sensor_3": 0,
@@ -190,29 +308,76 @@ class _EmailSignUpState extends State<EmailSignUp> {
               "Sensor_5": 0,
               "Sensor_6": 0
             },
-            "Buttons": {
-              "Button_1": false,
-              "Button_2": false,
-              "Button_3": false,
-              "Button_4": false,
-              "Button_5": false,
-              "Button_6": false,
-              "Button_7": false,
-              "Button_8": false,
-              "Button_9": false
-            }
           },
           "Device_3": {
-            "State": 0,
-            "Sensors": {
-              "Sensor_1": 25,
-              "Sensor_2": 25,
-              "Sensor_3": 25,
-              "Sensor_4": 25,
-              "Sensor_5": 25,
-              "Sensor_6": 25
+            "Live": {
+              "State": {
+                "Ts": DateTime.now().millisecondsSinceEpoch,
+                "Value": 0
+              },
+              "Sensors": {
+                "names": {
+                  "Sensor_1": "Sensor 1",
+                  "Sensor_2": "Sensor 2",
+                  "Sensor_3": "Sensor 3",
+                  "Sensor_4": "Sensor 4",
+                  "Sensor_5": "Sensor 5",
+                  "Sensor_6": "Sensor 6"
+                },
+                "Sensor_1": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_2": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_3": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_4": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_5": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_6": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                }
+              },
+              "Buttons": {
+                "names": {
+                  "Button_1": "Button 1",
+                  "Button_2": "Button 2",
+                  "Button_3": "Button 3",
+                  "Button_4": "Button 4",
+                  "Button_5": "Button 5",
+                  "Button_6": "Button 6"
+                },
+                "Button_1": false,
+                "Button_2": false,
+                "Button_3": false,
+                "Button_4": false,
+                "Button_5": false,
+                "Button_6": false,
+                "Button_7": false,
+                "Button_8": false,
+                "Button_9": false
+              }
             },
             "Storage": {
+              "names": {
+                "Sensor_1": "Sensor 1",
+                "Sensor_2": "Sensor 2",
+                "Sensor_3": "Sensor 3",
+                "Sensor_4": "Sensor 4",
+                "Sensor_5": "Sensor 5",
+                "Sensor_6": "Sensor 6"
+              },
               "Sensor_1": 0,
               "Sensor_2": 0,
               "Sensor_3": 0,
@@ -220,59 +385,76 @@ class _EmailSignUpState extends State<EmailSignUp> {
               "Sensor_5": 0,
               "Sensor_6": 0
             },
-            "Buttons": {
-              "Button_1": false,
-              "Button_2": false,
-              "Button_3": false,
-              "Button_4": false,
-              "Button_5": false,
-              "Button_6": false,
-              "Button_7": false,
-              "Button_8": false,
-              "Button_9": false
-            }
           },
           "Device_4": {
-            "State": 0,
-            "Sensors": {
-              "Sensor_1": 25,
-              "Sensor_2": 25,
-              "Sensor_3": 25,
-              "Sensor_4": 25,
-              "Sensor_5": 25,
-              "Sensor_6": 25,
+            "Live": {
+              "State": {
+                "Ts": DateTime.now().millisecondsSinceEpoch,
+                "Value": 0
+              },
+              "Sensors": {
+                "names": {
+                  "Sensor_1": "Sensor 1",
+                  "Sensor_2": "Sensor 2",
+                  "Sensor_3": "Sensor 3",
+                  "Sensor_4": "Sensor 4",
+                  "Sensor_5": "Sensor 5",
+                  "Sensor_6": "Sensor 6"
+                },
+                "Sensor_1": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_2": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_3": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_4": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_5": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_6": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                }
+              },
+              "Buttons": {
+                "names": {
+                  "Button_1": "Button 1",
+                  "Button_2": "Button 2",
+                  "Button_3": "Button 3",
+                  "Button_4": "Button 4",
+                  "Button_5": "Button 5",
+                  "Button_6": "Button 6"
+                },
+                "Button_1": false,
+                "Button_2": false,
+                "Button_3": false,
+                "Button_4": false,
+                "Button_5": false,
+                "Button_6": false,
+                "Button_7": false,
+                "Button_8": false,
+                "Button_9": false
+              }
             },
             "Storage": {
-              "Sensor_1": 0,
-              "Sensor_2": 0,
-              "Sensor_3": 0,
-              "Sensor_4": 0,
-              "Sensor_5": 0,
-              "Sensor_6": 0,
-            },
-            "Buttons": {
-              "Button_1": false,
-              "Button_2": false,
-              "Button_3": false,
-              "Button_4": false,
-              "Button_5": false,
-              "Button_6": false,
-              "Button_7": false,
-              "Button_8": false,
-              "Button_9": false
-            }
-          },
-          "Device_5": {
-            "State": 0,
-            "Sensors": {
-              "Sensor_1": 25,
-              "Sensor_2": 25,
-              "Sensor_3": 25,
-              "Sensor_4": 25,
-              "Sensor_5": 25,
-              "Sensor_6": 25
-            },
-            "Storage": {
+              "names": {
+                "Sensor_1": "Sensor 1",
+                "Sensor_2": "Sensor 2",
+                "Sensor_3": "Sensor 3",
+                "Sensor_4": "Sensor 4",
+                "Sensor_5": "Sensor 5",
+                "Sensor_6": "Sensor 6"
+              },
               "Sensor_1": 0,
               "Sensor_2": 0,
               "Sensor_3": 0,
@@ -280,17 +462,83 @@ class _EmailSignUpState extends State<EmailSignUp> {
               "Sensor_5": 0,
               "Sensor_6": 0
             },
-            "Buttons": {
-              "Button_1": false,
-              "Button_2": false,
-              "Button_3": false,
-              "Button_4": false,
-              "Button_5": false,
-              "Button_6": false,
-              "Button_7": false,
-              "Button_8": false,
-              "Button_9": false
-            }
+          },
+          "Device_5": {
+            "Live": {
+              "State": {
+                "Ts": DateTime.now().millisecondsSinceEpoch,
+                "Value": 0
+              },
+              "Sensors": {
+                "names": {
+                  "Sensor_1": "Sensor 1",
+                  "Sensor_2": "Sensor 2",
+                  "Sensor_3": "Sensor 3",
+                  "Sensor_4": "Sensor 4",
+                  "Sensor_5": "Sensor 5",
+                  "Sensor_6": "Sensor 6"
+                },
+                "Sensor_1": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_2": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_3": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_4": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_5": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                },
+                "Sensor_6": {
+                  "Ts": DateTime.now().millisecondsSinceEpoch,
+                  "Value": 0
+                }
+              },
+              "Buttons": {
+                "names": {
+                  "Button_1": "Button 1",
+                  "Button_2": "Button 2",
+                  "Button_3": "Button 3",
+                  "Button_4": "Button 4",
+                  "Button_5": "Button 5",
+                  "Button_6": "Button 6"
+                },
+                "Button_1": false,
+                "Button_2": false,
+                "Button_3": false,
+                "Button_4": false,
+                "Button_5": false,
+                "Button_6": false,
+                "Button_7": false,
+                "Button_8": false,
+                "Button_9": false
+              }
+            },
+            "Storage": {
+              "names": {
+                "Sensor_1": "Sensor 1",
+                "Sensor_2": "Sensor 2",
+                "Sensor_3": "Sensor 3",
+                "Sensor_4": "Sensor 4",
+                "Sensor_5": "Sensor 5",
+                "Sensor_6": "Sensor 6"
+              },
+              "Sensor_1": 0,
+              "Sensor_2": 0,
+              "Sensor_3": 0,
+              "Sensor_4": 0,
+              "Sensor_5": 0,
+              "Sensor_6": 0
+            },
           }
         }
       }).then((res) {
@@ -334,6 +582,5 @@ class _EmailSignUpState extends State<EmailSignUp> {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
-    ageController.dispose();
   }
 }

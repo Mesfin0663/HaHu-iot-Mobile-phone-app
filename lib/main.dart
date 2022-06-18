@@ -12,6 +12,7 @@ void main() async {
   runApp(MyApp());
 }
 
+//
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,9 +40,9 @@ class IntroScreen extends StatelessWidget {
               )
             : SignUp(),
         seconds: 5,
-        image: Image.asset('assets/images/aastu.PNG'),
+        // image: Image.asset('assets/images/aastu.PNG'),
         title: new Text(
-          'Welcome To AASTU IOT !',
+          'Welcome To ሀሁ IOT !',
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         backgroundColor: Colors.white,

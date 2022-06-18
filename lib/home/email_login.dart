@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:new_iot/home/home.dart';
-import 'package:new_iot/home/signup.dart';
 
 class EmailLogIn extends StatefulWidget {
+  const EmailLogIn({Key key}) : super(key: key);
+
   @override
   _EmailLogInState createState() => _EmailLogInState();
 }
@@ -19,7 +20,7 @@ class _EmailLogInState extends State<EmailLogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Login")),
+        appBar: AppBar(title: const Text("Login")),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(

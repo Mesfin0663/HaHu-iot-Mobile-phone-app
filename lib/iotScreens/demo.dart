@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'dart:io'; //InternetAddress utility
 import 'dart:async'; //For StreamController/Stream
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class device1 extends StatefulWidget {
@@ -36,15 +35,6 @@ class _device1State extends State<device1> {
   bool value9 = false;
   final dbRef = FirebaseDatabase.instance.reference();
   double _currentSliderValue = 20;
-
-  connection() {
-    var connectivityResult = (Connectivity().checkConnectivity());
-    if (connectivityResult == ConnectivityResult.mobile) {
-      // I am connected to a mobile network.
-    } else if (connectivityResult == ConnectivityResult.wifi) {
-      // I am connected to a wifi network.
-    }
-  }
 
   onUpdate1() {
     setState(() {

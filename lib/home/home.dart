@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:new_iot/home/signup.dart';
 import 'package:new_iot/iotScreens/device1.dart';
 import 'package:new_iot/iotScreens/device2.dart';
+import 'package:new_iot/iotScreens/device3.dart';
+import 'package:new_iot/iotScreens/device4.dart';
+import 'package:new_iot/iotScreens/device5.dart';
 
 class Home extends StatelessWidget {
   Home({this.uid, this.uname, this.uemail});
@@ -33,7 +36,6 @@ class BaseApp extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
-          leading: Icon(Icons.menu),
           title: Text(title),
           actions: <Widget>[
             TextButton(
@@ -55,80 +57,129 @@ class BaseApp extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Welcome " + uname,
-                  style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                Text("Dear User You Have the following devices"),
-                SizedBox(height: 10),
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: FlatButton(
-                    child: Text("Device 1"),
-                    color: Colors.green,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Location1(
-                                uid: this.uid,
-                                uname: this.uname,
-                                uemail: this.uemail)),
-                      );
-                    },
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 30),
+                  Text(
+                    "Welcome " + uname,
+                    style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.black54,
+                        fontWeight: FontWeight.bold),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: FlatButton(
-                    child: Text("Device 2"),
-                    color: Colors.green,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Location2(
-                                uid: this.uid,
-                                uname: this.uname,
-                                uemail: this.uemail)),
-                      );
-                    },
+                  SizedBox(height: 10),
+                  Container(
+                    child: Center(
+                      child: Text(
+                        "Dear User You Have the following devices",
+                        style: TextStyle(
+                            fontSize: 13,
+                            color: Color.fromARGB(255, 63, 174, 226),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: FlatButton(
-                    child: Text("Device 3"),
-                    color: Colors.green,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Location1(
-                                uid: this.uid,
-                                uname: this.uname,
-                                uemail: this.uemail)),
-                      );
-                    },
+                  const SizedBox(height: 30),
+                  Container(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      child: const Text("Device 1"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Location1(
+                                  uid: this.uid,
+                                  uname: this.uname,
+                                  uemail: this.uemail)),
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      child: Text("Device 2"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Location2(
+                                  uid: this.uid,
+                                  uname: this.uname,
+                                  uemail: this.uemail)),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      child: Text("Device 3"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Location3(
+                                  uid: this.uid,
+                                  uname: this.uname,
+                                  uemail: this.uemail)),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      child: Text("Device 4"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Location4(
+                                  uid: this.uid,
+                                  uname: this.uname,
+                                  uemail: this.uemail)),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 150,
+                    child: ElevatedButton(
+                      child: Text("Device 5"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Location5(
+                                  uid: this.uid,
+                                  uname: this.uname,
+                                  uemail: this.uemail)),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -160,7 +211,12 @@ class _NavigateDrawerState extends State<NavigateDrawer> {
         children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text(uname),
-            accountEmail: Text(uemail),
+            accountEmail: Column(
+              children: [
+                Text(uemail),
+                Text(uid),
+              ],
+            ),
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -196,7 +252,7 @@ class _NavigateDrawerState extends State<NavigateDrawer> {
 }
 
 class Location1 extends StatelessWidget {
-  Location1({this.uid, this.uname, this.uemail});
+  Location1({this.uid, this.uemail, this.uname});
   final String uid;
   final String uname;
   final String uemail;
@@ -221,6 +277,51 @@ class Location2 extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark),
       home: device2(uid: this.uid, uname: this.uname, uemail: this.uemail),
+    );
+  }
+}
+
+class Location3 extends StatelessWidget {
+  Location3({this.uid, this.uemail, this.uname});
+  final String uid;
+  final String uname;
+  final String uemail;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark),
+      home: device3(uid: this.uid, uname: this.uname, uemail: this.uemail),
+    );
+  }
+}
+
+class Location4 extends StatelessWidget {
+  Location4({this.uid, this.uname, this.uemail});
+  final String uid;
+  final String uname;
+  final String uemail;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark),
+      home: device4(uid: this.uid, uname: this.uname, uemail: this.uemail),
+    );
+  }
+}
+
+class Location5 extends StatelessWidget {
+  Location5({this.uid, this.uname, this.uemail});
+  final String uid;
+  final String uname;
+  final String uemail;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark),
+      home: device5(uid: this.uid, uname: this.uname, uemail: this.uemail),
     );
   }
 }

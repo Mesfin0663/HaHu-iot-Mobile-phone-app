@@ -120,6 +120,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  control_pad:
+    dependency: "direct main"
+    description:
+      name: control_pad
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1+1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -148,6 +155,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+  file:
+    dependency: transitive
+    description:
+      name: file
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.2"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -216,6 +230,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_joystick:
+    dependency: "direct main"
+    description:
+      name: flutter_joystick
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -223,6 +244,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_local_notifications:
+    dependency: "direct main"
+    description:
+      name: flutter_local_notifications
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.3.2"
+  flutter_local_notifications_linux:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_linux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1+1"
+  flutter_local_notifications_platform_interface:
+    dependency: transitive
+    description:
+      name: flutter_local_notifications_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
   flutter_signin_button:
     dependency: "direct main"
     description:
@@ -255,12 +297,19 @@ packages:
     source: hosted
     version: "4.0.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.17.0"
+  joystick:
+    dependency: "direct main"
+    description:
+      name: joystick
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   js:
     dependency: transitive
     description:
@@ -309,7 +358,7 @@ packages:
       name: nm
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.3"
+    version: "0.4.4"
   path:
     dependency: transitive
     description:
@@ -324,6 +373,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.4.0"
+  platform:
+    dependency: transitive
+    description:
+      name: platform
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -331,6 +387,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  process:
+    dependency: transitive
+    description:
+      name: process
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.2.4"
   provider:
     dependency: "direct main"
     description:
@@ -413,6 +476,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.8"
+  timezone:
+    dependency: transitive
+    description:
+      name: timezone
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.0"
   typed_data:
     dependency: transitive
     description:
@@ -427,6 +497,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  xdg_directories:
+    dependency: transitive
+    description:
+      name: xdg_directories
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0+1"
   xml:
     dependency: transitive
     description:
@@ -436,4 +513,4 @@ packages:
     version: "5.3.1"
 sdks:
   dart: ">=2.14.0 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.2.0"
